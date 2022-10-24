@@ -1,9 +1,11 @@
 import React from 'react';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
 
 const Register = () => {
   return (
-    <div>
-      <h1>This is register</h1>
+    <div className='w-75 mx-auto mt-5'>
+
     </div>
   );
 };

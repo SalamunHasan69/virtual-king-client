@@ -9,16 +9,18 @@ const Header = () => {
   return (
     <Navbar bg="light" expand="lg">
       <Container>
-        <Navbar.Brand href="/">
-          <img
-            src="https://i.insider.com/565b1cf6dd08955b3f8b4594?width=750&format=jpeg&auto=webp"
-            width="35"
-            height="35"
-            className="d-inline-block align-top rounded-circle"
-            alt="logo"
-          />
-        </Navbar.Brand>
-        <Navbar.Brand href="/"><h3>Virtual King</h3></Navbar.Brand>
+        <div className='d-flex align-items-center gap-3'>
+          <Link to='/'>
+            <img
+              src="https://i.insider.com/565b1cf6dd08955b3f8b4594?width=750&format=jpeg&auto=webp"
+              width="35"
+              height="35"
+              className="d-inline-block align-top rounded-circle"
+              alt="logo"
+            />
+          </Link>
+          <Link style={{ textDecoration: 'none' }} to='/'><h3>Virtual King</h3></Link>
+        </div>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className='ms-auto'>
@@ -35,11 +37,11 @@ const Header = () => {
                 </NavDropdown.Item>
               </NavDropdown>
             </div>
-            <div className='d-flex align-items-center gap-2'>
+            <div className='d-flex align-items-center gap-3'>
               <Link style={{ textDecoration: 'none' }} to='/home'>Home</Link>
               <Link style={{ textDecoration: 'none' }} to='/blog'>Blog</Link>
-              <Link style={{ textDecoration: 'none' }} to='/login'>Login</Link>
-              <Link style={{ textDecoration: 'none' }} to='/register'>Register</Link>
+              <Link to='/login'>Login</Link>
+              <Link to='/register'>Register</Link>
             </div>
           </Nav>
         </Navbar.Collapse>
