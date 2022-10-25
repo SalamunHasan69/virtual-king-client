@@ -1,11 +1,10 @@
 import { createBrowserRouter } from "react-router-dom";
 import Blog from "../components/Blog";
+import ErrorPage from "../components/ErrorPage";
 import FAQ from "../components/FAQ";
 import Home from "../components/Home";
 import Login from "../components/Login";
 import Register from "../components/Register";
-import CourseDetails from "../Courses/CourseDetails";
-import Courses from "../Courses/Courses";
 import CoursesInfo from "../Courses/CoursesInfo";
 import Main from "../layout/Main/Main";
 
@@ -14,6 +13,7 @@ export const routes = createBrowserRouter([
   {
     path: '/',
     element: <Main></Main>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: '/',
@@ -42,6 +42,7 @@ export const routes = createBrowserRouter([
       {
         path: '/Courses-info',
         element: <CoursesInfo></CoursesInfo>,
+        loader: () => fetch('http://localhost:5000/course')
       },
     ]
   }

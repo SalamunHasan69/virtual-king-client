@@ -1,5 +1,5 @@
 import React, { } from 'react';
-import { Col, Container, Row } from 'react-bootstrap';
+import { useLoaderData } from 'react-router-dom';
 import CourseDetails from './CourseDetails';
 import CourseName from './CourseName';
 
@@ -7,17 +7,26 @@ import CourseName from './CourseName';
 const CoursesInfo = () => {
 
 
+  const data = useLoaderData()
+
   return (
-    <Container>
-      <Row>
-        <Col lg="4">
-          <CourseName></CourseName>
-        </Col>
-        <Col lg="8">
-          <CourseDetails></CourseDetails>
-        </Col>
-      </Row>
-    </Container>
+    <div className='d-flex'>
+      <div className='w-2/5'>
+        <CourseName>
+
+        </CourseName>
+      </div>
+      <div className='w-3/5'>
+        {
+          data.map(card =>
+            <CourseDetails
+              key={card.id}
+              card={card}
+            >
+            </CourseDetails>)
+        }
+      </div>
+    </div>
   );
 };
 
