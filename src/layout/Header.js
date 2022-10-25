@@ -2,12 +2,11 @@ import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
-    <Navbar bg="light" expand="lg">
+    <Navbar expand="lg">
       <Container>
         <div className='d-flex align-items-center gap-3'>
           <Link to='/'>
@@ -25,21 +24,13 @@ const Header = () => {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className='ms-auto'>
             <div className='me-5'>
-              <NavDropdown title="Courses" id="basic-nav-dropdown">
-                <NavDropdown.Item href="#action/3.1">
-                  Action
-                </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">
-                  Another action
-                </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">
-                  Something
-                </NavDropdown.Item>
-              </NavDropdown>
+              {/* <NavDropdown title="Courses" id="basic-nav-dropdown">
+              </NavDropdown> */}
             </div>
             <div className='d-flex align-items-center gap-3'>
-              <Link style={{ textDecoration: 'none' }} to='/home'>Home</Link>
-              <Link style={{ textDecoration: 'none' }} to='/blog'>Blog</Link>
+              <Link className='text-dark' style={{ textDecoration: 'none' }} to='/home'>Home</Link>
+              <Link className='text-dark' style={{ textDecoration: 'none' }} to='/faq'>FAQ</Link>
+              <Link className='text-dark' style={{ textDecoration: 'none' }} to='/blog'>Blog</Link>
               <Link to='/login'>Login</Link>
               <Link to='/register'>Register</Link>
             </div>

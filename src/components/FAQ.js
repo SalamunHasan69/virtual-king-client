@@ -1,13 +1,13 @@
 import React from 'react';
 import Header from '../layout/Header';
 
-const Blog = () => {
+const FAQ = () => {
   return (
     <div>
       <Header></Header>
-      <h1 className='mt-5'>This is blog</h1>
+      <h1>This is faq</h1>
     </div>
   );
 };
 
-export default Blog;
+export default FAQ;
