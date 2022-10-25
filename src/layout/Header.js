@@ -1,10 +1,21 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { Image } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import { FaUser } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../contexts/AuthProvider/AuthProvider';
 
 const Header = () => {
+  const { user, logOut } = useContext(AuthContext)
+
+  const handleLogOut = () => {
+    logOut()
+      .then(() => { })
+      .catch(error => console.error(error))
+  }
+
   return (
     <Navbar expand="lg">
       <Container>
@@ -18,7 +29,7 @@ const Header = () => {
               alt="logo"
             />
           </Link>
-          <Link style={{ textDecoration: 'none' }} to='/'><h3>Virtual King</h3></Link>
+          <Link style={{ textDecoration: 'none' }} to='/'><h3 className='text-dark fw-bold fst-italic'>Virtual King</h3></Link>
         </div>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
@@ -31,8 +42,26 @@ const Header = () => {
               <Link className='text-dark' style={{ textDecoration: 'none' }} to='/home'>Home</Link>
               <Link className='text-dark' style={{ textDecoration: 'none' }} to='/faq'>FAQ</Link>
               <Link className='text-dark' style={{ textDecoration: 'none' }} to='/blog'>Blog</Link>
-              <Link to='/login'>Login</Link>
-              <Link to='/register'>Register</Link>
+            </div>
+            <div className='ms-5'>
+              <>
+                {user?.photoURL ?
+                  <Image style={{ height: '35px' }} roundedCircle src={user.photoURL}></Image>
+                  : <FaUser></FaUser>
+                }
+              </>
+              {
+                user?.uid ?
+                  <>
+                    <small className=' mx-2'>{user?.displayName}</small>
+                    <button onClick={handleLogOut} className='btn btn-outline-dark'>Log out</button>
+                  </>
+                  :
+                  <>
+                    <Link className='mx-2' to='/login'>Login</Link>
+                    <Link to='/register'>Register</Link>
+                  </>
+              }
             </div>
           </Nav>
         </Navbar.Collapse>
