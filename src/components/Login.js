@@ -1,12 +1,10 @@
 import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import Header from '../layout/Header';
 
 const Login = () => {
   return (
     <div className='w-75 mx-auto'>
-      <Header></Header>
       <Form className='mt-5'>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>

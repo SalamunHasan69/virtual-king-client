@@ -4,6 +4,7 @@ import FAQ from "../components/FAQ";
 import Home from "../components/Home";
 import Login from "../components/Login";
 import Register from "../components/Register";
+import Courses from "../Courses/Courses";
 import Main from "../layout/Main/Main";
 
 
@@ -36,6 +37,11 @@ export const routes = createBrowserRouter([
         path: '/register',
         element: <Register></Register>
       },
+      {
+        path: '/course/:id',
+        element: <Courses></Courses>,
+        loader: () => fetch(``)
+      }
     ]
   }
 
