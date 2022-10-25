@@ -42,13 +42,7 @@ export const routes = createBrowserRouter([
       {
         path: '/Courses-info',
         element: <CoursesInfo></CoursesInfo>,
-        loader: ({ params }) => fetch(`http://localhost:5000/course-info/${params.id}`)
       },
-      {
-        path: 'course-info/:id',
-        element: <CourseDetails></CourseDetails>,
-        loader: ({ params }) => fetch(`http://localhost:5000/course-info/${params.id}`)
-      }
     ]
   }
 

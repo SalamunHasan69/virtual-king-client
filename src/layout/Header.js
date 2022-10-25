@@ -6,6 +6,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import { FaUser } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../contexts/AuthProvider/AuthProvider';
+import Form from 'react-bootstrap/Form';
 
 const Header = () => {
   const { user, logOut } = useContext(AuthContext)
@@ -43,7 +44,13 @@ const Header = () => {
               <Link className='text-dark' style={{ textDecoration: 'none' }} to='/faq'>FAQ</Link>
               <Link className='text-dark' style={{ textDecoration: 'none' }} to='/blog'>Blog</Link>
             </div>
-            <div className='ms-5'>
+            <div className='mx-5'>
+              <Form.Check
+                type="switch"
+                id="custom-switch"
+              />
+            </div>
+            <div>
               <>
                 {user?.photoURL ?
                   <Image style={{ height: '35px' }} roundedCircle src={user.photoURL}></Image>

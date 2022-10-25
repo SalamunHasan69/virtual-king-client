@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { FaArrowRight } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 const CourseName = () => {
@@ -21,6 +22,7 @@ const CourseName = () => {
               to={`/course/${course.id}`}
               style={{ textDecoration: 'none' }}>
               {course.name}
+              <FaArrowRight className='ms-2'></FaArrowRight>
             </Link>
           </p>)
       }
