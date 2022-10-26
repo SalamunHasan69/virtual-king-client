@@ -1,10 +1,11 @@
 import React, { } from 'react';
 import Button from 'react-bootstrap/Button';
+import { Link } from 'react-router-dom';
 
 
-const CourseDetails = ({ card }) => {
+const CourseDetails = ({ course }) => {
 
-  const { image, name } = card
+  const { image, name } = course
 
   return (
     <div className='mt-5'>
@@ -13,7 +14,7 @@ const CourseDetails = ({ card }) => {
       <div className='py-2'>
         <h3>{name}</h3>
       </div>
-      <Button className='text-dark text-center px-5' variant="outline-primary">Details</Button>
+      <Button className='text-dark text-center px-5' variant="outline-primary"><Link className='text-dark' to={`/course/${course.id}`} style={{ textDecoration: 'none' }}>Details</Link></Button>
 
     </div>
   );

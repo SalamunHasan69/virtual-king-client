@@ -6,7 +6,7 @@ const Courses = () => {
 
   return (
     <div className='d-flex justify-content-center mt-5'>
-      <button className='btn btn-outline-primary'><Link style={{ textDecoration: 'none' }} to='/Courses-info'><h5 className='text-dark px-5'>Courses</h5></Link></button>
+      <button className='btn btn-outline-primary'><Link style={{ textDecoration: 'none' }} to='/courses-info'><h5 className='text-dark px-5'>Courses</h5></Link></button>
     </div>
   );
 };

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { FaArrowRight } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
+
 const CourseName = () => {
 
   const [courses, setCourses] = useState([]);
@@ -18,7 +19,7 @@ const CourseName = () => {
         courses.map(course =>
           <p className='my-5' key={course.id}>
             <Link
-              className='text-white fs-5'
+              className='text-dark fs-5'
               to={`/course/${course.id}`}
               style={{ textDecoration: 'none' }}>
               {course.name}

@@ -1,11 +1,16 @@
 import React from 'react';
-import Courses from '../Courses/Courses';
+import './Home.css'
 
 const Home = () => {
   return (
     <div>
-      <h1 className='d-flex justify-content-center font-monospace fw-bold fst-italic mt-5'>Keep calm and carry on</h1>
-      <Courses></Courses>
+      <div className='row'>
+        <div className='col-md-4 d-flex justify-content-center align-items-center'>
+          <h1 className='font-monospace fw-bold fst-italic'>Keep calm and carry on</h1>
+        </div>
+        <div className='bg col-md-8'>
+        </div>
+      </div>
     </div>
   );
 };

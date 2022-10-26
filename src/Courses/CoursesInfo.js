@@ -20,10 +20,10 @@ const CoursesInfo = () => {
         <div className='d-flex row row-cols-1 row-cols-md-3 g-auto col-md-8'>
 
           {
-            data.map(card =>
+            data.map(course =>
               <CourseDetails
-                key={card.id}
-                card={card}
+                key={course.id}
+                course={course}
               >
               </CourseDetails>)
           }

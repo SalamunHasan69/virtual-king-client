@@ -32,6 +32,9 @@ const Header = () => {
           </Link>
           <Link style={{ textDecoration: 'none' }} to='/'><h3 className='text-dark fw-bold fst-italic'>Virtual King</h3></Link>
         </div>
+        <div className='ms-2'>
+          <button className='btn btn-outline-primary'><Link style={{ textDecoration: 'none' }} to='/courses-info'><h5 className='text-dark px-3'>Courses</h5></Link></button>
+        </div>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className='ms-auto'>
