@@ -10,21 +10,25 @@ const CoursesInfo = () => {
   const data = useLoaderData()
 
   return (
-    <div className='d-flex'>
-      <div className='w-2/5'>
-        <CourseName>
+    <div className='container'>
+      <div className='row'>
+        <div className='col-md-4'>
+          <CourseName>
 
-        </CourseName>
-      </div>
-      <div className='w-3/5'>
-        {
-          data.map(card =>
-            <CourseDetails
-              key={card.id}
-              card={card}
-            >
-            </CourseDetails>)
-        }
+          </CourseName>
+        </div>
+        <div className='d-flex row row-cols-1 row-cols-md-3 g-auto col-md-8'>
+
+          {
+            data.map(card =>
+              <CourseDetails
+                key={card.id}
+                card={card}
+              >
+              </CourseDetails>)
+          }
+
+        </div>
       </div>
     </div>
   );

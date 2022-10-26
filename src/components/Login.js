@@ -3,8 +3,8 @@ import React, { useContext } from 'react';
 import Button from 'react-bootstrap/Button';
 import ButtonGroup from 'react-bootstrap/ButtonGroup'
 import Form from 'react-bootstrap/Form';
-import { FaGoogle, FaFacebook } from "react-icons/fa";
-import { useNavigate } from 'react-router-dom';
+import { FaGoogle, FaGithub } from "react-icons/fa";
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../contexts/AuthProvider/AuthProvider';
 
 
@@ -60,9 +60,10 @@ const Login = () => {
         <Form.Text className='text-danger'>
           {/* {error} */}
         </Form.Text>
+        <p className='mt-2'><small>Don't have an account?</small> <Link to='/register'>Register</Link></p>
         <ButtonGroup vertical className='mt-4 d-flex align-item-center'>
           <Button onClick={handleGoogleSignIn} className='mb-2' variant="outline-dark"><FaGoogle></FaGoogle> Login with Google</Button>
-          <Button variant="outline-dark"><FaFacebook></FaFacebook> Login with Facebook</Button>
+          <Button variant="outline-dark"><FaGithub></FaGithub> Login with Github</Button>
         </ButtonGroup>
       </Form>
     </div>
