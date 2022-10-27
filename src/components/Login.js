@@ -1,5 +1,5 @@
 import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import Button from 'react-bootstrap/Button';
 import ButtonGroup from 'react-bootstrap/ButtonGroup'
 import Form from 'react-bootstrap/Form';
@@ -8,9 +8,10 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../contexts/AuthProvider/AuthProvider';
 
 
+
 const Login = () => {
 
-  const { signIn } = useContext(AuthContext);
+  const { signIn, user } = useContext(AuthContext);
   const navigate = useNavigate();
   const [error, setError] = useState('');
   const location = useLocation();
@@ -28,13 +29,13 @@ const Login = () => {
         console.log(user);
         form.reset();
         setError('');
-        navigate(from, { replace: true });
       })
+
       .catch(error => {
         console.error(error)
         setError(error.message);
-      })
-  }
+      });
+  };
 
   const { providerLogin } = useContext(AuthContext);
 
@@ -56,7 +57,13 @@ const Login = () => {
         console.log(user);
       })
       .catch(error => console.error(error))
-  }
+  };
+
+  useEffect(() => {
+    if (user) {
+      navigate(from, { replace: true });
+    }
+  }, [user, navigate, from])
 
   return (
     <div className='w-75 mx-auto'>
