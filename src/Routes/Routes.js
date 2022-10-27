@@ -4,6 +4,7 @@ import ErrorPage from "../components/ErrorPage";
 import FAQ from "../components/FAQ";
 import Home from "../components/Home";
 import Login from "../components/Login";
+import PrivateRoute from "../components/PrivateRoute";
 import Register from "../components/Register";
 import CoursesInfo from "../Courses/CoursesInfo";
 import CurrentCourse from "../Courses/CurrentCourse";
@@ -53,7 +54,7 @@ export const routes = createBrowserRouter([
       },
       {
         path: '/premium-course/:id',
-        element: <PremiumCourse></PremiumCourse>,
+        element: <PrivateRoute><PremiumCourse></PremiumCourse></PrivateRoute>,
         loader: ({ params }) => fetch(`https://virtual-king-server.vercel.app/premium-course/${params.id}`)
       },
     ]
