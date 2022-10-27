@@ -5,9 +5,9 @@ import FAQ from "../components/FAQ";
 import Home from "../components/Home";
 import Login from "../components/Login";
 import Register from "../components/Register";
-import Courses from "../Courses/Courses";
 import CoursesInfo from "../Courses/CoursesInfo";
 import CurrentCourse from "../Courses/CurrentCourse";
+import PremiumCourse from "../Courses/PremiumCourse";
 import Main from "../layout/Main/Main";
 
 
@@ -49,12 +49,13 @@ export const routes = createBrowserRouter([
       {
         path: '/course/:id',
         element: <CurrentCourse></CurrentCourse>,
-        loader: ({ params }) => fetch(`http://localhost:5000/course/${params.id}`)
+        loader: ({ params }) => fetch(`https://virtual-king-server.vercel.app/course/${params.id}`)
       },
       {
-        path: '/courses',
-        element: <Courses></Courses>
-      }
+        path: '/premium-course/:id',
+        element: <PremiumCourse></PremiumCourse>,
+        loader: ({ params }) => fetch(`https://virtual-king-server.vercel.app/premium-course/${params.id}`)
+      },
     ]
   }
 

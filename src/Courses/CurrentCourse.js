@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
@@ -7,7 +7,7 @@ const CurrentCourse = () => {
 
   const data = useLoaderData()
   console.log((data));
-  const { id, image, name, title, fee } = data;
+  const { image, name, title, fee } = data;
 
   return (
     <div className='mt-5 d-flex justify-content-center'>
@@ -20,7 +20,7 @@ const CurrentCourse = () => {
           </Card.Text>
           <span>Course fee: ${fee}</span>
           <div className='d-flex justify-content-end'>
-            <Button variant="primary">Get premium access</Button>
+            <Button variant="primary"><Link className='text-white' style={{ textDecoration: 'none' }} to={`/premium-course/$${data.id}`} >Get premium access</Link></Button>
           </div>
         </Card.Body>
       </Card>
