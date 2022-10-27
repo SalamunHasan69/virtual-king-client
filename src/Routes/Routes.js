@@ -43,12 +43,12 @@ export const routes = createBrowserRouter([
       {
         path: '/courses-info',
         element: <CoursesInfo></CoursesInfo>,
-        loader: () => fetch(`http://localhost:5000/course/`)
+        loader: () => fetch(`https://virtual-king-server.vercel.app/course/`)
       },
       {
         path: '/course/:id',
         element: <CurrentCourse></CurrentCourse>,
-        loader: (params) => fetch(`http://localhost:5000/course/${params.id}`)
+        loader: (params) => fetch(`https://virtual-king-server.vercel.app/course/${params.id}`)
       },
     ]
   }

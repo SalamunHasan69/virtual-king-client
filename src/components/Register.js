@@ -1,12 +1,14 @@
 import React, { useContext, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../contexts/AuthProvider/AuthProvider';
 
 
 const Register = () => {
 
   const { createUser } = useContext(AuthContext);
+  const navigate = useNavigate();
   const [error, setError] = useState('');
 
   const handleSubmit = event => {
@@ -24,6 +26,7 @@ const Register = () => {
         console.log(user);
         setError('');
         form.reset();
+        navigate('/login');
       })
       .catch(error => {
         console.error(error)
@@ -51,10 +54,6 @@ const Register = () => {
           <Form.Control type="password" name='password' placeholder="Password" required />
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicCheckbox">
-          {/* <Form.Check
-          type="checkbox"
-          onClick={handleAccepted}
-          label={<>Accept <Link to={'/terms'}>"Terms and conditions"</Link></>} /> */}
         </Form.Group>
         <Button variant="primary" type="submit">
           Register

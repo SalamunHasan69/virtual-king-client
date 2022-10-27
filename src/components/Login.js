@@ -25,7 +25,7 @@ const Login = () => {
         console.log(user);
         form.reset();
         setError('');
-        navigate('/')
+        navigate('/');
       })
       .catch(error => {
         console.error(error)
