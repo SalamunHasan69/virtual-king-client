@@ -1,14 +1,27 @@
-import React, { } from 'react';
-import { Link } from 'react-router-dom';
+// import React from 'react';
+// import Button from 'react-bootstrap/Button';
+// import Card from 'react-bootstrap/Card';
 
 
-const Courses = () => {
+// const Courses = ({ xyz }) => {
 
-  return (
-    <div className='d-flex justify-content-center mt-5'>
-      <button className='btn btn-outline-primary'><Link style={{ textDecoration: 'none' }} to='/courses-info'><h5 className='text-dark px-5'>Courses</h5></Link></button>
-    </div>
-  );
-};
+//   const { id, image, name, title, fee } = xyz;
 
-export default Courses;
+//   return (
+//     <div>
+//       <Card className='mb-5'>
+//         <Card.Img variant="top" src={image} />
+//         <Card.Body>
+//           <Card.Title>{name}</Card.Title>
+//           <Card.Text>
+//             <p>{title}</p>
+//           </Card.Text>
+//           <span>Course fee: ${fee}</span>
+//           <Button variant="primary">Go somewhere</Button>
+//         </Card.Body>
+//       </Card>
+//     </div>
+//   );
+// };
+
+// export default Courses;

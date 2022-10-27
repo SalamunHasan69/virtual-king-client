@@ -1,15 +1,17 @@
 import React from 'react';
+import { useLoaderData } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
-const CurrentCourse = ({ course }) => {
+const CurrentCourse = () => {
 
-
-  const { id, image, name, title, fee } = course;
+  const data = useLoaderData()
+  console.log((data));
+  const { id, image, name, title, fee } = data;
 
   return (
-    <div>
-      <Card className='mb-5'>
+    <div className='mt-5 d-flex justify-content-center'>
+      <Card className='w-25'>
         <Card.Img variant="top" src={image} />
         <Card.Body>
           <Card.Title>{name}</Card.Title>
@@ -17,7 +19,9 @@ const CurrentCourse = ({ course }) => {
             <p>{title}</p>
           </Card.Text>
           <span>Course fee: ${fee}</span>
-          <Button variant="primary">Go somewhere</Button>
+          <div className='d-flex justify-content-end'>
+            <Button variant="primary">Get premium access</Button>
+          </div>
         </Card.Body>
       </Card>
     </div>
@@ -25,3 +29,6 @@ const CurrentCourse = ({ course }) => {
 };
 
 export default CurrentCourse;
+
+
+

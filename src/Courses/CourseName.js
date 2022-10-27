@@ -4,14 +4,17 @@ import { Link } from 'react-router-dom';
 
 
 const CourseName = () => {
-
+  // const navigate = useNavigate()
+  // const handleCourse = () => {
+  //   navigate(`/courses`)
+  // }
   const [courses, setCourses] = useState([]);
 
   useEffect(() => {
-    fetch('https://virtual-king-server.vercel.app/course')
+    fetch('http://localhost:5000/course')
       .then(res => res.json())
       .then(data => setCourses(data));
-  }, [])
+  }, []);
 
   return (
     <div className='mt-5'>
